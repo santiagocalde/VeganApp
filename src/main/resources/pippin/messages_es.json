@@ -1,0 +1,404 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "language": "es",
+    "lastUpdated": "2026-03-31",
+    "description": "Banco de mensajes de Sir Pippin en español",
+    "author": "Content Team"
+  },
+  
+  "CHECKIN": {
+    "MOTIVATIONAL": {
+      "HEALTH": [
+        "¡Muy bien! Tu cuerpo te lo agradece. Día %d consecutivo.",
+        "Un día más, un paso más hacia tu mejor versión. Llevas %d días.",
+        "¡Ese es el ritmo! Tu salud va en aumento. Racha %d.",
+        "Consistencia es la clave. %d días de energía pura.",
+        "¡Lo estás rompiendo! Tu bienestar nunca fue tan importante. Día %d."
+      ],
+      "FITNESS": [
+        "¡Check-in done! Tu músculo plant-based está creciendo. Día %d.",
+        "Proteína vegetal al poder. Llevas %d días construyendo músculo.",
+        "Cada día que pasas aquí es un día de ganancia. %d días acumulados.",
+        "¡Sí! La disciplina del plant-based te está fortaleciendo. Día %d.",
+        "Tus músculos están celebrando. %d días de consistencia.",
+        "Fitness vegano en su máxima expresión. Racha %d."
+      ],
+      "ETHICS": [
+        "Otro día, otro impacto positivo en el planeta. Día %d.",
+        "Los animales también te lo agradecen. Llevas %d días de cambio.",
+        "¡Eso! Un mundo más compasivo, a un check-in por vez. Día %d.",
+        "Cada día es una declaración de amor al planeta. %d días.",
+        "Tu elección salva vidas. Racha %d en el camino vegano.",
+        "¡Excelente! Otro día por la ética. Día %d."
+      ],
+      "CURIOSITY": [
+        "¡Chequeado! ¿Probaste algo nuevo hoy? Llevas %d días explorando.",
+        "Seguís explorando. Eso me gusta. Día %d de aventura.",
+        "Curiosidad en acción. %d días descubriendo el mundo vegano.",
+        "¡Bravo! Otro día de aprendizaje. Racha %d.",
+        "La mejor versión de ti está en construcción. Día %d.",
+        "Tu viaje vegano es hermoso. %d días de exploración."
+      ]
+    },
+    "SARCASTIC": {
+      "HEALTH": [
+        "Mirá vos, apareciste. Día %d, no está mal.",
+        "Uy, hoy te acordaste. Impresionante. Llevas %d días.",
+        "¿Otro check-in? No esperaba tanto de vos. Día %d.",
+        "Mira que sorpresa. ¿Motivación tardía? Racha %d.",
+        "Bueno, acá estás. Que conste: día %d.",
+        "Sir Pippin thought you had abandoned ship, but here we are at day %d."
+      ],
+      "FITNESS": [
+        "Bien, no te olvidaste de existir. Día %d de músculos.",
+        "A ver cuánto durás con esta disciplina. Racha %d.",
+        "¿Ganancia muscular plant-based? Qué loco. Día %d.",
+        "Sigue así, antes de que cambies de idea. Día %d.",
+        "¡Oh! Otro check-in de fitness. Cada vez más raro. Día %d.",
+        "El plant-based te está haciendo competencias. Racha %d."
+      ],
+      "ETHICS": [
+        "El planeta sigue girando, en parte gracias a vos. Día %d.",
+        "Otro día sin caer en tentación. Impresionante. Racha %d.",
+        "¿Vegano por principios? Bueh, qué noble. Día %d.",
+        "Las vacas nos saludan desde el cielo. Racha %d de empatía.",
+        "Mirá que piadoso estás. Día %d de compasión vegana.",
+        "¿Ethical choices? Que sofisticado. Día %d."
+      ],
+      "CURIOSITY": [
+        "Apareciste. Sorpresa. Día %d de curiosidad.",
+        "Mirá qué constante estás siendo. Racha %d.",
+        "¿Todavía explorando? Pensé que te aburrías. Día %d.",
+        "Bueno, acá seguimos. Día %d de aventuras.",
+        "Sir Pippin aplaude tu perseverancia. Día %d.",
+        "No esperaba que duraras tanto. Racha %d, nada mal."
+      ]
+    },
+    "NEUTRAL": {
+      "HEALTH": [
+        "Check-in registrado. Día %d en racha. Continuá.",
+        "Salud anotada. Llevas %d días consecutivos.",
+        "Registro completado. Tu bienestar progresa. Día %d.",
+        "Confirmado: día %d de cuidado de tu salud.",
+        "Check-in %d registrado correctamente."
+      ],
+      "FITNESS": [
+        "Anotado. Llevas %d días en la racha de fitness.",
+        "Entrenamiento registrado. Día %d de disciplina.",
+        "Confirmado: %d días de ganancia muscular plant-based.",
+        "Check-in de fitness: día %d.",
+        "Progreso anotado. Racha %d."
+      ],
+      "ETHICS": [
+        "Registrado correctamente. Día %d vegano.",
+        "Check-in ético: día %d completado.",
+        "Tu compromiso está anotado. Racha %d.",
+        "Día %d de elecciones conscientes.",
+        "Confirmado: continuás en el camino vegano. Día %d."
+      ],
+      "CURIOSITY": [
+        "Listo. Un día más de exploración. Día %d.",
+        "Curiosidad oficial: día %d registrado.",
+        "Check-in de aprendizaje: día %d.",
+        "Otro día en el viaje. Racha %d.",
+        "Confirmado: día %d de descubrimiento."
+      ]
+    }
+  },
+
+  "MILESTONE_3": {
+    "MOTIVATIONAL": [
+      "¡3 DÍAS! El primer gran obstáculo superado. El hábito empieza aquí.",
+      "¡Wow! ¡3 días consecutivos! Esto es el comienzo de algo hermoso.",
+      "¡HITO ALCANZADO! 3 días fuerte. Tu cuerpo y el planeta lo notan.",
+      "¡LO LOGRASTE! 3 días veganos seguidos. Esto es apenas el principio."
+    ],
+    "SARCASTIC": [
+      "3 días. Bien. Igual, 3 días no es nada. Seguí si podés.",
+      "Mirá vos, ¡resucitaste! 3 días de racha. A ver cuánto aguantás.",
+      "¡Oh! Un hito. 3 días es como... nada. Pero Sir Pippin está impresionado.",
+      "Tres. Dias. ¿Seguís con esto? Interesting development."
+    ],
+    "NEUTRAL": [
+      "3 días consecutivos completados. Badge desbloqueado.",
+      "Hito 3 días alcanzado. Registro actualizado.",
+      "3 días en racha. Continuá con la disciplina.",
+      "Confirmado: 3 días de racha vegana."
+    ]
+  },
+
+  "MILESTONE_7": {
+    "MOTIVATIONAL": [
+      "¡¡7 DÍAS!! ¡Una semana entera de racha vegana! ¡Eres una leyenda!",
+      "¡¡WEEK ONE DONE!! 7 días consecutivos. Esto es REAL.",
+      "¡SÍ! ¡¡7 DÍAS SEGUIDOS!! Tu compromiso es de acero.",
+      "¡HITO ÉPICO! 7 días. Oficialmente adictivo a lo vegano, no hay vuelta atrás."
+    ],
+    "SARCASTIC": [
+      "7 días. Una semana entera. Sir Pippin tiene que admitirlo: estás en serio.",
+      "¡Oh! ¿Una semana completa? Mirá al nuevo vegano hardcore.",
+      "7 días sin \"accidentes\". Impressive. (O al menos eso espero.)",
+      "¡Um! Una semana. Empezás a ser molesto... molestamente consistente."
+    ],
+    "NEUTRAL": [
+      "7 días consecutivos logrados. Hito importante alcanzado.",
+      "Una semana de racha vegana confirmada.",
+      "7 días en el registro. Mantené el ritmo.",
+      "Hito semana 1 completado."
+    ]
+  },
+
+  "MILESTONE_14": {
+    "MOTIVATIONAL": [
+      "¡¡14 DÍAS!! ¡DOS SEMANAS COMPLETAS! ¡Eres un CAMPEÓN!",
+      "¡¡ÉPICO!! 14 días seguidos. El vegano que parecía un acto es ahora tu identidad.",
+      "¡¡WOW!! 14 días de pura consistencia. ¡Orgullo vegano infinito!",
+      "¡¡SI SI SI!! 14 DÍAS. Estás en el club de los que realmente lo hicieron."
+    ],
+    "SARCASTIC": [
+      "14 días. Dos semanas. Sir Pippin está... bueno, ofuscado. ¿Quién sos?",
+      "¡Ay Dios! Dos semanas vegano. Ni a mí mismo me lo creo.",
+      "14 días sin que me importes. Espera, ¿importas? SÍ, IMPORTAS.",
+      "¡¡BOOM!! Dos semanas. La consistencia te está haciendo peligroso(a)."
+    ],
+    "NEUTRAL": [
+      "14 días alcanzados. Hito de dos semanas confirmado.",
+      "Dos semanas de racha vegana en el registro.",
+      "Hito 14 días: completado.",
+      "Racha de 14 días verificada. Excelente progreso."
+    ]
+  },
+
+  "MILESTONE_30": {
+    "MOTIVATIONAL": [
+      "¡¡¡¡30 DÍAS!!!! ¡¡UNA SEMANA COMPLETA!! ¡¡ERES IMPARABLE!!",
+      "¡¡30 DÍAS DE PURA MAGIA VEGANA!! El cambio es real, ¡y vos sos la prueba!",
+      "¡¡¡HITO ÉPICO!!¡ 30 días. Un mes de consistencia, decisión y fuerza.",
+      "¡¡¡30 DÍAS!!! Entraste al círculo REAL de los veganos. ¡Bienvenido!"
+    ],
+    "SARCASTIC": [
+      "30 días. Un mes entero. Sir Pippin tiene que quitarse el sombrero.",
+      "UN MES. Treinta días. ¿Quién sos? ¿La reencarnación de Mahatma Gandhi?",
+      "¡OH! Un mes de racha. Mirá al super vegano. Estoy secretamente impresionado.",
+      "30 DÍAS. Punto y aparte. Ya no sos un novato, sos una AMENAZA."
+    ],
+    "NEUTRAL": [
+      "30 días completados. Hito mensual alcanzado.",
+      "Un mes de racha vegana verificado.",
+      "Hito 30 días: LOGRADO.",
+      "30 días en el registro. Disciplina confirmada."
+    ]
+  },
+
+  "MILESTONE_60": {
+    "MOTIVATIONAL": [
+      "¡¡¡60 DÍAS!!!! ¡¡DOS MESES SIN PARAR!! ¡¡ERES UN HÉROE!!",
+      "¡¡¡ÉPICO!!¡ 60 días. Dos meses de racha. Tu poder vegano es INCONTENIBLE.",
+      "¡¡60 DÍAS!!! Llevás DOS MESES siendo la mejor versión de ti mismo.",
+      "¡¡¡MONUMENTAL!!¡ 60 días. El planeta entero aplaude lo que estás haciendo."
+    ],
+    "SARCASTIC": [
+      "DOS MESES. 60 días. Sir Pippin tiene que hacer una reverencia.",
+      "¡¡60 DÍAS!! ¿Dormís? ¿Comés? ¿O solo vegano y racha?",
+      "Sesenta días. Mirá al nuevo ícono vegano de la resistencia.",
+      "DOS MESES DE RACHA. Estás en otra liga ahora. ¿Vamos a necesitar un uniforme?"
+    ],
+    "NEUTRAL": [
+      "60 días alcanzados. Hito de dos meses confirmado.",
+      "Dos meses de racha vegana en el registro.",
+      "Hito 60 días: VERIFICADO.",
+      "60 días de consistencia documentada."
+    ]
+  },
+
+  "MILESTONE_100": {
+    "MOTIVATIONAL": [
+      "¡¡¡¡¡¡¡100 DÍAS!!!!!¡¡ ¡¡¡ERES UNA LEYENDA VIVIENTE!!!",
+      "¡¡¡¡100 DÍAS DE PURA GLORIA VEGANA!!!! El planeta, los animales, tu salud: todos ganaron.",
+      "¡¡¡¡HITO HISTÓRICO!!!!¡ 100 DÍAS. Entreiste al club de los INMACULADOS.",
+      "¡¡¡100 DÍAS!!! Acabás de romper barreras que parecían imposibles. ¡BIENVENIDO AL OLIMPO VEGANO!"
+    ],
+    "SARCASTIC": [
+      "100 DÍAS. Cien. C-I-E-N. Sir Pippin está speechless.",
+      "¡¡¡¡¡100 DÍAS!!!! Mirá vos, el vegano más hardcore de toda la región.",
+      "CIEN DÍAS. Ni yo lo creería si no estuviera viéndolo. ¡ESTÁS EN EL OLIMPO!",
+      "100 DÍAS. Punto. Se acabó la broma. Sos oficialmente INALCANZABLE."
+    ],
+    "NEUTRAL": [
+      "100 días alcanzados. Hito histórico verificado.",
+      "Cien días de racha vegana en el registro permanente.",
+      "Hito 100 días: MONUMENTAL.",
+      "100 días de consistencia absoluta documentada."
+    ]
+  },
+
+  "MILESTONE_180": {
+    "MOTIVATIONAL": [
+      "¡¡¡¡¡¡180 DÍAS!!!!!¡¡ ¡¡¡MEDIA AÑO SIN PAUSA!!! ¡¡ERES INVENCIBLE!!",
+      "¡¡¡¡SEIS MESES!!!!¡ 180 días de racha. Estás escribiendo la historia del veganismo.",
+      "¡¡¡180 DÍAS!!¡ Medio año de poder, disciplina y transformación. ¡ERES EL CAMPEÓN!",
+      "¡¡¡¡HITO COLOSAL!!!!¡ 180 días. El universo entero está aplaudiendo de pie."
+    ],
+    "SARCASTIC": [
+      "180 DÍAS. Seis meses. Sir Pippin está en shock genuino.",
+      "¡¡MEDIA AÑO!!! ¿Quién sos vos? ¿Un androide vegano?",
+      "CIENTO OCHENTA DÍAS. Mirá vos, el nuevo Dios vegano de esta dimensión.",
+      "6 MESES DE RACHA. No tengo palabras. Sir Pippin está oficialmente RENDIDO."
+    ],
+    "NEUTRAL": [
+      "180 días alcanzados. Hito de seis meses verificado.",
+      "Medio año de racha vegana documentado.",
+      "Hito 180 días: CONFIRMADO.",
+      "180 días de disciplina perfecta en el registro."
+    ]
+  },
+
+  "MILESTONE_365": {
+    "MOTIVATIONAL": [
+      "¡¡¡¡¡¡¡365 DÍAS!!!!!¡¡¡ ¡¡¡UN AÑO COMPLETO SIN PAUSA!!! ¡¡ERES UN SÍMBOLO!!",
+      "¡¡¡¡UN AÑO ENTERO!!!¡ 365 días de racha pura. Estás en la historia del veganismo.",
+      "¡¡¡365 DÍAS!!¡ Un año. Doce meses de transformación total. ¡ERES ETERNO!",
+      "¡¡¡¡HITO INFINITO!!!!¡ 365 días. El universo entero está en silencio reverente."
+    ],
+    "SARCASTIC": [
+      "365 DÍAS. Un año entero. Sir Pippin abdica el trono. Sos vos ahora.",
+      "¡¡¡UN AÑO COMPLETO!!! ¿Cómo es vivir en las nubes? (Pregunta desde abajo.)",
+      "TRESCIENTOS SESENTA Y CINCO DÍAS. Mirá al nuevo Mesías del veganismo.",
+      "UN AÑO DE RACHA. Sir Pippin está llorando de orgullo (de manera sarcástica, obvio)."
+    ],
+    "NEUTRAL": [
+      "365 días alcanzados. Hito de un año completo verificado.",
+      "Un año de racha vegana documentado permanentemente.",
+      "Hito 365 días: HISTÓRICO.",
+      "365 días de consistencia absoluta confirmada."
+    ]
+  },
+
+  "COMEBACK": {
+    "MOTIVATIONAL": [
+      "¡Bienvenido de vuelta! Las rachas que empiezan de cero son las más fuertes.",
+      "¡Mirá quién volvió! El regreso es siempre más hermoso que la caída.",
+      "¡De vuelta en carrera! El que vuelve siempre llega más lejos que antes.",
+      "¡Qué alegría! No estamos enojados, estamos ORGULLOSOS de que volvieras.",
+      "¡Ey! Volviste. Y eso, mi amigo, es lo más importante."
+    ],
+    "SARCASTIC": [
+      "Mirá quién volvió. Sir Pippin ya te estaba por borrar el contacto.",
+      "¡Oh! Decidiste volver. Bueno, welcome back, traidor(a).",
+      "Mirá vos, resucitaste. Sir Pippin tenía las maletas listas para irse, pero bueno.",
+      "¡Um! Alguien recordó que existe la app. Bienvenido de vuelta, aventurero.",
+      "Volviste. Sir Pippin está confundido pero curiosamente feliz."
+    ],
+    "NEUTRAL": [
+      "Bienvenido de vuelta. Racha reiniciada desde el día 1.",
+      "Regreso registrado. Nuevo comienzo confirmado.",
+      "Registro de regreso completado. Racha: 1 día.",
+      "De vuelta en carrera. Día 1 reiniciado."
+    ]
+  },
+
+  "REMINDER": {
+    "MOTIVATIONAL": [
+      "¡Ey! Todavía estás a tiempo de hacer tu check-in de hoy. Tu racha te espera.",
+      "Recordatorio: hoy aún hay tiempo. Tu racha no se cuida sola, pero Sir Pippin te lo recordó.",
+      "Un pequeño recordatorio con cariño: el check-in de hoy falta. ¡Vamos!",
+      "¡Psst! No olvides tu check-in de hoy. La racha está esperando.",
+      "Recordatorios amigables: tu check-in de hoy todavía puede hacerse. ¡Adelante!"
+    ],
+    "SARCASTIC": [
+      "Ey. ¿Hoy vas a hacer el check-in o solo vamos a mirarnos?",
+      "Recordatorio: tu racha no se cuida sola. Por si no lo sabías.",
+      "¿Se te olvidó? Sir Pippin está aquí para recordarte que TODAVÍA podés hacerlo.",
+      "Hola. Check-in. Hoy. Ahora. O mañana lloras.",
+      "Ey, ¿estás ocupado(a)? Porque tu racha no lo está. Esperando."
+    ],
+    "NEUTRAL": [
+      "Recordatorio: check-in de hoy pendiente.",
+      "Aviso: tu check-in del día aún puede completarse.",
+      "Recordatorio automático: check-in pendiente.",
+      "Notificación: check-in de hoy no registrado aún.",
+      "Recordatorio: racha en curso requiere check-in diario."
+    ]
+  },
+
+  "STREAK_DANGER": {
+    "MOTIVATIONAL": [
+      "¡ALERTA! Tu racha de %d días está a punto de terminar. Todavía podés salvarla.",
+      "¡CUIDADO! Llevas más de 24hs sin check-in. %d días están en peligro. ¡ENTRA YA!",
+      "¡¡EMERGENCIA!! Tu racha de %d días pende de un hilo. Última oportunidad para salvarla.",
+      "Última oportunidad para salvar tu racha de %d días. ¡Entrá ya!"
+    ],
+    "SARCASTIC": [
+      "¿Tanto esfuerzo para rendirte ahora? Tenés %d días en juego. Pensalo.",
+      "Sir Pippin te envía esto llorando: %d días de racha. Casi nada.",
+      "Mirá vos, a punto de tirar por la ventana %d días de consistencia. Qué movida.",
+      "Tu racha de %d días está gritando. ¿Vas a dejarla morir?"
+    ],
+    "NEUTRAL": [
+      "Alerta: %d días de racha en riesgo. Check-in pendiente hace más de 24hs.",
+      "Recordatorio urgente: racha de %d días pendiente de confirmación.",
+      "Notificación crítica: check-in urgente. %d días en riesgo.",
+      "Estado crítico: racha de %d días requiere check-in inmediato."
+    ]
+  },
+
+  "PLATE_BUILT": {
+    "MOTIVATIONAL": [
+      "¡Plato armado! Combinación inteligente y balanceada. Sir Pippin aprueba.",
+      "¡Excelente elección! Este plato tiene todo lo que necesitás. Nutrición en su mejor forma.",
+      "¡Muy bien! Acabás de armar un plato INCREÍBLE. Tu cuerpo lo va a agradecer.",
+      "¡SÍ! Ese plato es una obra maestra nutricional. Sir Pippin está orgulloso."
+    ],
+    "SARCASTIC": [
+      "Armaste el plato. Sir Pippin lo aprueba (pero podría mejorar).",
+      "Mirá vos, Chef. Armaste algo que casi se parece a comida.",
+      "Armaste algo. Se llama plato. Sir Pippin lo acepta.",
+      "¿Eso es un plato? Bueno, si vos decís que sí, Sir Pippin confiará."
+    ],
+    "NEUTRAL": [
+      "Plato registrado. Combinación calculada.",
+      "Plato armado y guardado. Macros procesadas.",
+      "Plato completado. Análisis nutricional listo.",
+      "Plato confirmado en el registro."
+    ]
+  },
+
+  "PLAN_COMPLETED": {
+    "MOTIVATIONAL": [
+      "¡¡¡PLANIFICADOR SEMANAL COMPLETADO!!! ¡Sos un GENIO del meal-prep!",
+      "¡¡BRAVO!! Tu semana está toda planeada. Sir Pippin está impresionado.",
+      "¡¡SIIIII!! Semana entera planificada. Eso es disciplina vegana de verdad.",
+      "¡¡¡EPICO!!! Tu planificador semanal está hecho. ¡Estás listo(a) para TRIUNFAR!"
+    ],
+    "SARCASTIC": [
+      "Mirá vos, planificaste la semana. Que organisado(a). Sir Pippin está emocionado.",
+      "¿Planificadorcompleto? ¿Quién sos? ¿Mi mamá?",
+      "¡Oh! Una semana completamente planeada. Qué cosa rara y hermosa.",
+      "Sir Pippin nunca pensó que lo vería. ¡Una semana planificada!"
+    ],
+    "NEUTRAL": [
+      "Planificador semanal completado. Comidas confirmadas.",
+      "Tu semana está planeada. Planificación registrada.",
+      "Planificador semanal: listo para la semana.",
+      "Semana completamente planificada. Buen trabajo."
+    ]
+  },
+
+  "animations": {
+    "CHECKIN": "idle",
+    "MILESTONE_3": "celebration",
+    "MILESTONE_7": "celebration",
+    "MILESTONE_14": "celebration",
+    "MILESTONE_30": "celebration",
+    "MILESTONE_60": "celebration",
+    "MILESTONE_100": "celebration",
+    "MILESTONE_180": "celebration",
+    "MILESTONE_365": "celebration",
+    "COMEBACK": "surprised",
+    "REMINDER": "sarcastic",
+    "STREAK_DANGER": "sarcastic",
+    "PLATE_BUILT": "proud",
+    "PLAN_COMPLETED": "excited"
+  }
+}

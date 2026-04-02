@@ -25,6 +25,8 @@
         <mapstruct.version>1.6.2</mapstruct.version>
         <lombok.version>1.18.34</lombok.version>
         <testcontainers.version>1.20.1</testcontainers.version>
+        <!-- Flyway 10.x soporta PostgreSQL 16+ -->
+        <flyway.version>10.18.2</flyway.version>
     </properties>
 
     <dependencies>
@@ -72,8 +74,8 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
 
@@ -81,10 +83,14 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
         </dependency>
+        <!-- Driver PostgreSQL para Flyway -->
         <dependency>
             <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-mysql</artifactId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>${flyway.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- â”€â”€â”€ Redis â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
@@ -230,9 +236,10 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <configuration>
-                    <url>${DB_URL:jdbc:mysql://localhost:3306/veganapp}</url>
+                    <url>${DB_URL:jdbc:postgresql://localhost:5432/veganapp}</url>
                     <user>${DB_USERNAME:veganapp_user}</user>
                     <password>${DB_PASSWORD:dev_password}</password>
+                    <driver>org.postgresql.Driver</driver>
                 </configuration>
             </plugin>
 

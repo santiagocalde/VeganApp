@@ -1,0 +1,367 @@
+{
+  "info": {
+    "_postman_id": "veganapp-fixed-collection",
+    "name": "VeganApp - Fixed Collection",
+    "description": "VeganApp API Collection - Auth, Profile, Streaks, Badges\nBase URL: {{base_url}}\nAuth: Bearer {{access_token}}",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "refresh_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "🔐 Auth",
+      "item": [
+        {
+          "name": "1. Register (Registro)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"MyPassword123\",\n  \"name\": \"John Doe\",\n  \"profileType\": \"VEGAN\",\n  \"motivation\": \"HEALTH\",\n  \"experienceLevel\": \"BEGINNER\",\n  \"budgetLevel\": \"NORMAL\",\n  \"tonePref\": \"MOTIVATIONAL\",\n  \"timezone\": \"America/Argentina/Buenos_Aires\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "register"]
+            },
+            "description": "Registra un nuevo usuario y guarda el token automáticamente"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const jsonData = pm.response.json();",
+                  "  pm.environment.set('access_token', jsonData.data.accessToken);",
+                  "  pm.environment.set('refresh_token', jsonData.data.refreshToken);",
+                  "  console.log('✅ Token guardado correctamente');",
+                  "  console.log('Access Token: ' + jsonData.data.accessToken.substring(0, 20) + '...');",
+                  "} else {",
+                  "  console.log('❌ Error en registro: ' + pm.response.code);",
+                  "  console.log(pm.response.text());",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "response": []
+        },
+        {
+          "name": "2. Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"MyPassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "login"]
+            },
+            "description": "Login - Obtiene accessToken y refreshToken"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "  const jsonData = pm.response.json();",
+                  "  pm.environment.set('access_token', jsonData.data.accessToken);",
+                  "  pm.environment.set('refresh_token', jsonData.data.refreshToken);",
+                  "  console.log('✅ Login exitoso');",
+                  "  console.log('Access Token: ' + jsonData.data.accessToken.substring(0, 20) + '...');",
+                  "} else {",
+                  "  console.log('❌ Error en login: ' + pm.response.code);",
+                  "  console.log(pm.response.text());",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "response": []
+        },
+        {
+          "name": "3. Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refresh_token}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/refresh",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "refresh"]
+            },
+            "description": "Renovar access token usando refresh token"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "  const jsonData = pm.response.json();",
+                  "  pm.environment.set('access_token', jsonData.data.accessToken);",
+                  "  pm.environment.set('refresh_token', jsonData.data.refreshToken);",
+                  "  console.log('✅ Token renovado');",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "response": []
+        },
+        {
+          "name": "4. Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refresh_token}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/logout",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "logout"]
+            },
+            "description": "Cerrar sesión en este dispositivo"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "👤 User Profile",
+      "item": [
+        {
+          "name": "1. Get My Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/me",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users", "me"]
+            },
+            "description": "Obtiene el perfil del usuario autenticado"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Respuesta válida', function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData.data.id).to.exist;",
+                  "    pm.expect(jsonData.data.email).to.exist;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "response": []
+        },
+        {
+          "name": "2. Update My Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe Updated\",\n  \"tonePref\": \"SARCASTIC\",\n  \"timezone\": \"Europe/Madrid\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/me",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users", "me"]
+            },
+            "description": "Actualiza el perfil del usuario"
+          },
+          "response": []
+        },
+        {
+          "name": "3. Change Password",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currentPassword\": \"MyPassword123\",\n  \"newPassword\": \"NewPassword456\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/me/password",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users", "me", "password"]
+            },
+            "description": "Cambiar contraseña"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "🎯 Streaks & Check-In",
+      "item": [
+        {
+          "name": "1. Get My Streak",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/streaks/me",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "streaks", "me"]
+            },
+            "description": "Obtiene la racha del usuario actual"
+          },
+          "response": []
+        },
+        {
+          "name": "2. Check-In (Registro Diario)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": \"FOOD\",\n  \"notes\": \"Desayuné vegano hoy\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/streaks/checkin",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "streaks", "checkin"]
+            },
+            "description": "Realiza un check-in diario. Categorías válidas: FOOD, ACTIVITY, RECIPE, KNOWLEDGE"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "🏆 Badges",
+      "item": [
+        {
+          "name": "1. Get My Badges",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/badges",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "badges"]
+            },
+            "description": "Lista de badges desbloqueados del usuario"
+          },
+          "response": []
+        },
+        {
+          "name": "2. Get All Available Badges",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/badges/catalog",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "badges", "catalog"]
+            },
+            "description": "Catálogo completo de badges disponibles"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

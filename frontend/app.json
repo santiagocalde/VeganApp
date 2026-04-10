@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "VeganApp",
+    "slug": "veganapp",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTabletMode": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.veganapp",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "myapp",
+    "extra": {
+      "eas": {
+        "projectId": "e0965b83-9921-4d98-8af4-ed6cdfb9ed96"
+      }
+    },
+    "plugins": []
+  }
+}

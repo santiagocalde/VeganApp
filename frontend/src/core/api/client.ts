@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // API configuration
 const API_BASE_URL = __DEV__
-  ? 'http://localhost:8080/api' // Local development
+  ? 'http://10.0.2.2:8080/api' // Android emulator: 10.0.2.2 routes to host machine
   : 'https://api.veganapp.com/api'; // Production URL
 
 // Create Axios instance with default config

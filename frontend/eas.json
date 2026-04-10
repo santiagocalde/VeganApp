@@ -1,0 +1,30 @@
+{
+  "cli": {
+    "version": ">= 5.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "production": {
+      "android": {
+        "env": {
+          "RCT_NO_LAUNCH_PACKAGER": "true"
+        }
+      }
+    },
+    "preview": {
+      "android": {
+        "env": {
+          "RCT_NO_LAUNCH_PACKAGER": "true"
+        }
+      }
+    },
+    "development": {
+      "android": {
+        "env": {
+          "RCT_NO_LAUNCH_PACKAGER": "true"
+        },
+        "distribution": "internal"
+      }
+    }
+  }
+}

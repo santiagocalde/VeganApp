@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "VeganApp",
+    "slug": "veganapp",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.veganapp",
+      "versionCode": 1
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e0965b83-9921-4d98-8af4-ed6cdfb9ed96"
+      }
+    },
+    "plugins": []
+  }
+}

@@ -7,7 +7,7 @@ import LoginScreen from '../features/auth/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
-const RootNavigator = () => {
+const RootNavigator: React.FC = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
   return (
@@ -48,24 +48,6 @@ const RootNavigator = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
-
-export default RootNavigator;
-/**
- * Root Navigator
- * ============================================================
- * Decides between AuthNavigator and AppNavigator based on auth state
- */
-
-import React from 'react';
-import { useIsAuthenticated } from '../core/auth/authStore';
-import AuthNavigator from '../features/auth/navigation/AuthNavigator';
-import AppNavigator from '../features/app/navigation/AppNavigator';
-
-export const RootNavigator: React.FC = () => {
-  const isAuthenticated = useIsAuthenticated();
-
-  return isAuthenticated ? <AppNavigator /> : <AuthNavigator />;
 };
 
 export default RootNavigator;

@@ -4,10 +4,10 @@
 
 ## 📱 Overview
 
-VeganApp is a full-stack mobile application that helps vegans manage recipes, meal planning, shopping lists, and track achievements. The app connects to a powerful Spring Boot backend with PostgreSQL database.
+VeganApp is a full-stack mobile application that helps vegans manage recipes, meal planning, shopping lists, and track achievements. The app connects to a Spring Boot backend with MySQL database and Redis/MinIO support.
 
 **Current Version**: v1.5  
-**Status**: ✅ Production Ready  
+**Status**: ⚠️ Beta (no lista para producción)  
 **Last Updated**: April 10, 2026
 
 ---
@@ -24,15 +24,16 @@ VeganApp is a full-stack mobile application that helps vegans manage recipes, me
 ### Backend Setup
 
 ```bash
-# 1. Start PostgreSQL
+# 1. Start infrastructure (MySQL, Redis, MinIO, Prometheus, Grafana)
 docker-compose up -d
 
 # 2. Install & Run Backend
-./mvnw clean install
-./mvnw spring-boot:run
+cd backend
+mvn clean install
+mvn spring-boot:run
 
-# Backend API: http://localhost:8080/api
-# Health check: http://localhost:8080/api/health
+# Backend API (host):       http://localhost:8080/api
+# Backend API (emulador):   http://10.0.2.2:8080/api
 ```
 
 ### Frontend Setup
@@ -46,10 +47,10 @@ npm install
 # 4. Start Metro bundler (Terminal A)
 npm start
 
-# 5. Build & Install APK (Terminal B)
-./gradlew assembleDebug
-# or if emulator is running:
-./gradlew installDebug
+# 5. Launch app on Android emulator (Terminal B)
+npm run android
+# or
+npx react-native run-android
 ```
 
 **Expected Result**: App launches with login screen, connects to backend ✅
@@ -60,21 +61,22 @@ npm start
 
 ```
 VeganApp/
-├── src/main/java/com/veganapp/          (Backend - 11 modules)
-│   ├── auth/                             JWT authentication
-│   ├── badge/                            Gamification
-│   ├── notification/                     Firebase FCM
-│   ├── recipe/                           Recipe management
-│   ├── planner/                          Meal planning
-│   ├── shopping/                         Shopping list
-│   ├── plate/                            Plate management
-│   ├── streak/                           Achievement tracking
-│   ├── user/                             User management
-│   ├── pippin/                           Core domain
-│   ├── common/                           Utilities
-│   └── VeganAppApplication.java          Main class
+├── backend/                              (Spring Boot backend)
+│   ├── pom.xml
+│   └── src/main/java/com/veganapp/
+│       ├── auth/                         JWT authentication
+│       ├── badge/                        Gamification
+│       ├── notification/                 Notifications
+│       ├── recipe/                       Recipe management
+│       ├── planner/                      Meal planning
+│       ├── plate/                        Plate builder
+│       ├── streak/                       Achievement tracking
+│       ├── user/                         User management
+│       ├── pippin/                       Sir Pippin domain
+│       ├── common/                       Utilities & exceptions
+│       └── VeganAppApplication.java      Main class
 │
-├── frontend/                              (Frontend - React Native)
+├── frontend/                            (React Native mobile app)
 │   ├── src/
 │   │   ├── navigation/
 │   │   │   ├── RootNavigator.tsx         Auth flow management
@@ -88,12 +90,10 @@ VeganApp/
 │   │   └── core/
 │   │       ├── api/                      API services (5 total)
 │   │       └── store/                    Zustand state management
-│   ├── App.tsx
-│   ├── index.js
-│   └── android/                          Gradle build config
+│   ├── App.tsx                          Root component
+│   ├── index.js                        Entry file for React Native
 │
-├── pom.xml                               Maven configuration
-├── docker-compose.yml                    PostgreSQL setup
+├── docker-compose.yml                    MySQL + Redis + MinIO + Monitoring
 └── README.md                             This file
 ```
 
@@ -135,25 +135,20 @@ VeganApp/
 
 ```bash
 # Backend
-./mvnw spring-boot:run
+cd backend
+mvn spring-boot:run
 
 # Frontend
+cd frontend
 npm install
 npm start
-./gradlew assembleDebug
+npm run android
 
-# Database
+# Database / Infra
+cd ..
 docker-compose up -d
 docker-compose down
 ```
-
----
-
-## 📚 Documentation
-
-- **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Installation & troubleshooting
-- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - System architecture
-- **[STATUS_FINAL.md](./STATUS_FINAL.md)** - Current status
 
 ---
 
@@ -161,7 +156,7 @@ docker-compose down
 
 | Layer | Technology |
 |-------|-----------|
-| Backend | Java 21, Spring Boot 3, PostgreSQL |
+| Backend | Java 21, Spring Boot 3, MySQL 8, Redis, MinIO |
 | Frontend | React Native 0.73.6, TypeScript |
 | State | Zustand |
 | HTTP | Axios |
@@ -171,12 +166,11 @@ docker-compose down
 
 ## ✅ Project Status
 
-- ✅ Backend complete (11 modules)
-- ✅ Frontend complete (6 screens)
-- ✅ Navigation working
-- ✅ API integration done
-- ✅ Documentation included
-- ✅ Ready to deploy
+- ✅ Backend completo (11 módulos funcionales, stack MySQL)
+- ✅ Frontend funcional (6 pantallas principales + navegación)
+- ✅ Conectividad emulador Android ↔ backend (10.0.2.2)
+- ⚠️ Falta pipeline CI/CD y hardening de seguridad para producción
+- ⚠️ Claves y secretos deben externalizarse en entornos productivos
 
 ---
 
